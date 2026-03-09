@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shilpa Vijay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #f8f5f0;
+      --warm-white: #fdfbf8;
+      --charcoal: #1e1e1e;
+      --mid: #555;
+      --light: #888;
+      --accent: #8b6f5c;
+      --accent-light: #c9a98a;
+      --border: #e2dcd5;
+      --section-gap: 100px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--warm-white);
+      color: var(--charcoal);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 60px;
+      background: rgba(253, 251, 248, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+
+    nav .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 36px;
+    }
+
+    nav ul a {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--mid);
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      align-items: center;
+      gap: 80px;
+      padding: 140px 60px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-text { padding-top: 20px; }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.1s forwards;
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 6vw, 5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.25s forwards;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--mid);
+      font-weight: 300;
+      max-width: 520px;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.55s forwards;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 28px;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    .btn-primary {
+      background: var(--charcoal);
+      color: var(--warm-white);
+    }
+    .btn-primary:hover { background: var(--accent); }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--mid);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-photo {
+      opacity: 0;
+      animation: fadeIn 1s 0.3s forwards;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(15%);
+      border-radius: 3px;
+      display: block;
+    }
+
+    .photo-caption {
+      font-size: 0.72rem;
+      color: var(--light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 12px;
+      text-align: right;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: var(--section-gap) 60px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+
+    .section-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      color: var(--accent-light);
+      font-style: italic;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .divider {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+      margin-left: 20px;
+    }
+
+    /* ── SKILLS STRIP ── */
+    .skills-strip {
+      width: 100%;
+      background: var(--charcoal);
+      padding: 0;
+      overflow: hidden;
+      border-top: 1px solid #2a2a2a;
+    }
+
+    .skills-strip-inner {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      animation: marquee 32s linear infinite;
+      width: max-content;
+    }
+
+    .skills-strip:hover .skills-strip-inner {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .skill-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 28px;
+      white-space: nowrap;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: #bbb;
+      font-weight: 300;
+      transition: color 0.2s;
+    }
+
+    .skill-pill:hover { color: var(--accent-light); }
+
+    .skill-icon { font-size: 0.9rem; }
+
+    .strip-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: #444;
+      flex-shrink: 0;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-bio p {
+      font-size: 1rem;
+      color: var(--mid);
+      font-weight: 300;
+      margin-bottom: 18px;
+    }
+
+    .about-bio p strong {
+      color: var(--charcoal);
+      font-weight: 500;
+    }
+
+    .about-sidebar {}
+
+    .info-block {
+      margin-bottom: 36px;
+    }
+
+    .info-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .info-block p, .info-block a {
+      font-size: 0.92rem;
+      color: var(--mid);
+      font-weight: 300;
+      display: block;
+      line-height: 1.8;
+      text-decoration: none;
+    }
+
+    .info-block a:hover { color: var(--accent); }
+
+    /* ── RESEARCH ── */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+    }
+
+    .research-card {
+      background: var(--cream);
+      padding: 40px;
+      transition: background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .research-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--accent);
+      transition: height 0.3s;
+    }
+
+    .research-card:hover { background: #f3ede6; }
+    .research-card:hover::before { height: 100%; }
+
+    .research-icon {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .research-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .research-card p {
+      font-size: 0.9rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .research-tags {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      color: var(--light);
+      border-radius: 2px;
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-list { display: flex; flex-direction: column; gap: 0; }
+
+    .pub-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 30px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .pub-year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      color: var(--accent-light);
+      font-style: italic;
+      padding-top: 3px;
+    }
+
+    .pub-content h4 {
+      font-size: 0.98rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    .pub-content .pub-meta {
+      font-size: 0.85rem;
+      color: var(--mid);
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .pub-content a {
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      margin-top: 6px;
+      display: inline-block;
+    }
+
+    .pub-content a:hover { text-decoration: underline; }
+
+    .pub-section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--accent);
+      margin: 40px 0 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── PRESS ── */
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .press-card {
+      background: var(--cream);
+      padding: 36px 32px;
+      transition: background 0.2s;
+    }
+
+    .press-card:hover { background: #f0e9e1; }
+
+    .press-outlet {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .press-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .press-card p {
+      font-size: 0.85rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .press-card a {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .press-card a:hover { text-decoration: underline; }
+
+    /* ── CV ── */
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .cv-section { margin-bottom: 48px; }
+
+    .cv-section-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv-entry { margin-bottom: 24px; }
+
+    .cv-entry-title {
+      font-size: 0.96rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 2px;
+    }
+
+    .cv-entry-sub {
+      font-size: 0.85rem;
+      color: var(--mid);
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .cv-entry-date {
+      font-size: 0.78rem;
+      color: var(--light);
+      margin-top: 2px;
+    }
+
+    .cv-download {
+      text-align: center;
+      padding: 40px;
+      background: var(--cream);
+      margin-top: 40px;
+      border-radius: 3px;
+    }
+
+    .cv-download p {
+      font-size: 0.9rem;
+      color: var(--mid);
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+
+    /* ── MISC ── */
+    .misc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .misc-card {
+      background: var(--cream);
+      padding: 36px 32px;
+    }
+
+    .misc-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .misc-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .misc-card ul li {
+      font-size: 0.88rem;
+      color: var(--mid);
+      font-weight: 300;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .misc-card ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent-light);
+      font-size: 0.7rem;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--charcoal);
+      color: var(--warm-white);
+      max-width: 100%;
+      padding: 100px 60px;
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    #contact h2 {
+      color: var(--warm-white);
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+    }
+
+    #contact p {
+      color: #aaa;
+      font-weight: 300;
+      font-size: 0.95rem;
+      margin-bottom: 36px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      padding: 16px 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: border-color 0.2s, background 0.2s;
+      border-radius: 2px;
+    }
+
+    .contact-link:hover {
+      border-color: var(--accent-light);
+      background: rgba(139, 111, 92, 0.1);
+    }
+
+    .contact-link-icon {
+      font-size: 1.1rem;
+      width: 24px;
+      text-align: center;
+    }
+
+    .contact-link-text {
+      flex: 1;
+    }
+
+    .contact-link-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      font-weight: 500;
+    }
+
+    .contact-link-value {
+      font-size: 0.9rem;
+      color: #ccc;
+      font-weight: 300;
+    }
+
+    .contact-note {
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 2px;
+    }
+
+    .contact-note h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--warm-white);
+      margin-bottom: 14px;
+    }
+
+    .contact-note p {
+      font-size: 0.88rem;
+      color: #999;
+      margin-bottom: 0;
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 28px;
+      background: #161616;
+      font-size: 0.75rem;
+      color: #555;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      nav ul { gap: 20px; }
+      #home { grid-template-columns: 1fr; padding: 120px 24px 60px; }
+      .hero-photo { order: -1; max-width: 300px; }
+      section { padding: 70px 24px; }
+      .about-grid, .cv-grid, .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+      .research-grid, .press-grid, .misc-grid { grid-template-columns: 1fr; }
+      #contact { padding: 70px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#home" class="logo">Shilpa Vijay</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#press">Press</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#misc">Misc</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<div id="home">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Postdoctoral Fellow · Stanford University</p>
+    <h1 class="hero-name">Shilpa<br><em>Vijay</em></h1>
+    <p class="hero-desc">
+      Experimental thermo-fluid researcher at Stanford's Center for Turbulence Research.
+      I study how surfaces shape heat and momentum transfer — from rough walls in wind tunnels
+      to porous interfaces engineered for passive flow control.
+    </p>
+    <div class="hero-links">
+      <a href="#research" class="btn btn-primary">View Research</a>
+      <a href="mailto:shilpavi@stanford.edu" class="btn btn-outline">Get in Touch</a>
+      <a href="https://scholar.google.com" target="_blank" class="btn btn-outline">Google Scholar</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="SV_headshotpng.png" alt="Shilpa Vijay" />
+    <p class="photo-caption">Center for Turbulence Research · Stanford</p>
+  </div>
+</div>
+
+<!-- ── SKILLS STRIP ── -->
+<div class="skills-strip">
+  <div class="skills-strip-inner">
+    <div class="skill-pill">
+      <span class="skill-icon">🌡️</span>
+      <span>IR Thermography</span>
+    </div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill">
+      <span class="skill-icon">💨</span>
+      <span>Wind Tunnel Testing</span>
+    </div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill">
+      <span class="skill-icon">📡</span>
+      <span>Cold-Wire Anemometry</span>
+    </div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill">
+      <span class="skill-icon">🔬</span>
+      <span>Particle Image Velocimetry</span>
+    </div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill">
+      <span class="skill-icon">⚙️</span>
+      <span>OpenFOAM · ANSYS Fluent</span>
+    </div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill">
+      <span class="skill-icon">🐍</span>
+      <span>Python · MATLAB · PyTorch</span>
+    </div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill">
+      <span class="skill-icon">🖨️</span>
+      <span>Rapid Prototyping · 3D Printing</span>
+    </div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill">
+      <span class="skill-icon">📊</span>
+      <span>DAQ Systems · Sensor Integration</span>
+    </div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill">
+      <span class="skill-icon">✏️</span>
+      <span>SolidWorks · OnShape · Fusion</span>
+    </div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill">
+      <span class="skill-icon">🧠</span>
+      <span>Bayesian Optimization</span>
+    </div>
+    <!-- duplicate for seamless loop -->
+    <div class="skill-pill"><span class="skill-icon">🌡️</span><span>IR Thermography</span></div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill"><span class="skill-icon">💨</span><span>Wind Tunnel Testing</span></div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill"><span class="skill-icon">📡</span><span>Cold-Wire Anemometry</span></div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill"><span class="skill-icon">🔬</span><span>Particle Image Velocimetry</span></div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill"><span class="skill-icon">⚙️</span><span>OpenFOAM · ANSYS Fluent</span></div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill"><span class="skill-icon">🐍</span><span>Python · MATLAB · PyTorch</span></div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill"><span class="skill-icon">🖨️</span><span>Rapid Prototyping · 3D Printing</span></div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill"><span class="skill-icon">📊</span><span>DAQ Systems · Sensor Integration</span></div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill"><span class="skill-icon">✏️</span><span>SolidWorks · OnShape · Fusion</span></div>
+    <div class="strip-dot"></div>
+    <div class="skill-pill"><span class="skill-icon">🧠</span><span>Bayesian Optimization</span></div>
+  </div>
+</div>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2>About</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-bio">
+      <p>
+        I am a <strong>Postdoctoral Fellow</strong> at Stanford's Center for Turbulence Research (CTR),
+        where I work with Prof. Beverley McKeon on experimental investigations of turbulent heat transfer
+        over rough surfaces and porous interfaces.
+      </p>
+      <p>
+        My research sits at the intersection of fluid mechanics, thermal engineering, and surface design.
+        I build custom experimental systems — modular heated-wall test sections, cold-wire anemometry rigs,
+        and IR thermography setups — to capture the physics that simulations miss.
+      </p>
+      <p>
+        Before Stanford, I earned my <strong>Ph.D. from USC</strong> (advisor: Prof. Mitul Luhar),
+        where I demonstrated 200–400% enhancement in convective heat transfer through engineered porous
+        surface architectures. I also hold a B.Tech. in Civil Engineering from College of Engineering Pune, India.
+      </p>
+      <p>
+        My work has been supported by the <strong>CTR Postdoctoral Fellowship</strong>,
+        the <strong>USC Viterbi Graduate Fellowship</strong>, and the <strong>S.N. Bose Scholarship</strong>
+        (top 55 students nationally in India, &lt;5% acceptance rate).
+      </p>
+    </div>
+    <div class="about-sidebar">
+      <div class="info-block">
+        <p class="info-label">Position</p>
+        <p>Postdoctoral Fellow</p>
+        <p>Center for Turbulence Research</p>
+        <p>Stanford University</p>
+      </div>
+      <div class="info-block">
+        <p class="info-label">Education</p>
+        <p>Ph.D. &amp; M.S. Mechanical Engineering<br>University of Southern California, 2023</p>
+        <p>B.Tech. Civil Engineering<br>College of Engineering Pune, 2016</p>
+      </div>
+      <div class="info-block">
+        <p class="info-label">Research Interests</p>
+        <p>Turbulent boundary layers · Rough-wall heat transfer</p>
+        <p>Porous surface design · IR thermography</p>
+        <p>Scalar transport · Passive flow control</p>
+      </div>
+      <div class="info-block">
+        <p class="info-label">Contact</p>
+        <a href="mailto:shilpavi@stanford.edu">shilpavi@stanford.edu</a>
+        <a href="https://www.linkedin.com/in/shilpa-vijay" target="_blank">LinkedIn</a>
+        <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESEARCH ── -->
+<section id="research" style="background: var(--cream); max-width: 100%; padding: var(--section-gap) 0;">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 60px;">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2>Research &amp; Projects</h2>
+      <div class="divider"></div>
+    </div>
+  </div>
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 60px;">
+    <div class="research-grid">
+      <div class="research-card">
+        <span class="research-icon">🌡️</span>
+        <h3>Thermal Footprints of Rough Walls</h3>
+        <p>
+          Investigating how turbulent boundary layers respond to step changes in surface roughness
+          using infrared thermography and cold-wire anemometry. Mapping scalar internal boundary
+          layer (IBL) growth and rough-to-smooth vs. smooth-to-rough transition asymmetries.
+          Presented at APS DFD 2024 and THMT'25 Tokyo.
+        </p>
+        <div class="research-tags">
+          <span class="tag">IR Thermography</span>
+          <span class="tag">Cold-wire Anemometry</span>
+          <span class="tag">Wind Tunnel</span>
+          <span class="tag">Scalar IBL</span>
+        </div>
+      </div>
+      <div class="research-card">
+        <span class="research-icon">🧩</span>
+        <h3>Porous Surfaces for Passive Flow Control</h3>
+        <p>
+          Designed and fabricated engineered porous surface architectures achieving 200–400%
+          enhancement in convective heat transfer. Used PIV, pressure sensing, and 500+
+          OpenFOAM simulations to map permeability-geometry relationships and optimize
+          multiphysics performance via Bayesian optimization.
+        </p>
+        <div class="research-tags">
+          <span class="tag">PIV</span>
+          <span class="tag">OpenFOAM</span>
+          <span class="tag">3D Printing</span>
+          <span class="tag">Bayesian Optimization</span>
+        </div>
+      </div>
+      <div class="research-card">
+        <span class="research-icon">⚙️</span>
+        <h3>Design-by-Morphing Framework</h3>
+        <p>
+          Co-developed a multiphysics optimization framework that generates non-intuitive
+          porous geometries from baseline topologies for thermofluid applications. Identified
+          ~20% performance sensitivity to subtle topological features invisible to traditional
+          parametric methods. Collaboration with Dr. Sangjoon Lee at CTR.
+        </p>
+        <div class="research-tags">
+          <span class="tag">Topology Optimization</span>
+          <span class="tag">CFD</span>
+          <span class="tag">Porous Media</span>
+        </div>
+      </div>
+      <div class="research-card">
+        <span class="research-icon">🛰️</span>
+        <h3>SWAYAM Pico-Satellite (ISRO)</h3>
+        <p>
+          Designed passive magnetic attitude control components — magnetorquer rods and
+          hysteresis dampers — for ISRO's SWAYAM student satellite using ANSYS Maxwell.
+          Presented Critical Design Review at ISRO Satellite Center. Satellite successfully
+          launched in 2016. Team recognized by the Prime Minister of India.
+        </p>
+        <div class="research-tags">
+          <span class="tag">ANSYS Maxwell</span>
+          <span class="tag">Attitude Control</span>
+          <span class="tag">ISRO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PUBLICATIONS ── -->
+<section id="publications">
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h2>Publications</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="pub-list">
+    <p class="pub-section-title">Peer-Reviewed Journal Articles</p>
+
+    <div class="pub-item">
+      <div class="pub-year">2024</div>
+      <div class="pub-content">
+        <h4>Pressure drop measurements over anisotropic porous substrates in channel flow</h4>
+        <p class="pub-meta">Vijay, S., Luhar, M. · <em>Experiments in Fluids</em> 65, 135</p>
+        <a href="https://doi.org/10.1007/s00348-024-03873-2" target="_blank">doi.org/10.1007/s00348-024-03873-2 ↗</a>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2020</div>
+      <div class="pub-content">
+        <h4>Resolvent-based design and experimental testing of porous materials for passive turbulence control</h4>
+        <p class="pub-meta">Chavarin, A., Efstathiou, C., Vijay, S., Luhar, M. · <em>International Journal of Heat and Fluid Flow</em> 86</p>
+        <a href="https://doi.org/10.1016/j.ijheatfluidflow.2020.108722" target="_blank">doi.org/10.1016/j.ijheatfluidflow.2020.108722 ↗</a>
+      </div>
+    </div>
+
+    <p class="pub-section-title">Conference Proceedings</p>
+
+    <div class="pub-item">
+      <div class="pub-year">2026</div>
+      <div class="pub-content">
+        <h4>Thermal Boundary Layer Development over a Step Change in Surface Roughness</h4>
+        <p class="pub-meta">Vijay, S., McKeon, B.J. · <em>TSFP-14</em>, Heidelberg, Germany — Accepted for oral presentation</p>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2025</div>
+      <div class="pub-content">
+        <h4>Experimental investigation of turbulent heat transfer over roughness elements</h4>
+        <p class="pub-meta">Vijay, S., McKeon, B.J. · <em>THMT'25</em>, Tokyo, Japan</p>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2023</div>
+      <div class="pub-content">
+        <h4>Characterization of Periodic Lattice Anisotropic Porous Materials for Passive Flow Control</h4>
+        <p class="pub-meta">Pinto, S.N., Zhang, Y., Cattafesta, L.N., … Vijay, S., Eizenberg, I. · <em>AIAA AVIATION 2023</em>, AIAA 2023-3448</p>
+      </div>
+    </div>
+
+    <p class="pub-section-title">Technical Reports</p>
+
+    <div class="pub-item">
+      <div class="pub-year">2025</div>
+      <div class="pub-content">
+        <h4>Thermal footprint of boundary layer with a step change in roughness</h4>
+        <p class="pub-meta">Vijay, S., McKeon, B.J. · <em>CTR Annual Research Briefs</em> [in press]</p>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2025</div>
+      <div class="pub-content">
+        <h4>Topology-aware permeability modeling in structured porous media for passive flow control</h4>
+        <p class="pub-meta">Lee, S., Vijay, S. · <em>CTR Annual Research Briefs</em> [in press]</p>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2024</div>
+      <div class="pub-content">
+        <h4>Experimental investigation of heat transfer over roughness elements: design and preliminary results</h4>
+        <p class="pub-meta">Vijay, S., McKeon, B.J. · <em>CTR Annual Research Briefs</em></p>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2024</div>
+      <div class="pub-content">
+        <h4>Resolvent analysis of high Reynolds number turbulent boundary layers subjected to pressure gradient histories</h4>
+        <p class="pub-meta">Preskett, T., Jaiswal, P., Ganapathisubramani, B., … Vijay, S., McKeon, B.J. · <em>CTR Proceedings of the Summer Program</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRESS ── -->
+<section id="press" style="background: var(--cream); max-width: 100%; padding: var(--section-gap) 0;">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 60px;">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2>Press &amp; Features</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="press-grid">
+
+      <div class="press-card">
+        <p class="press-outlet">Aerowomen</p>
+        <h4>Interview: Women in Aerodynamics &amp; Fluid Dynamics</h4>
+        <p>Featured Q&amp;A on Aerowomen's platform dedicated to raising the visibility of women in aerodynamics and fluid dynamics, sharing my research journey and career path.</p>
+        <a href="#" target="_blank">Read Interview ↗</a>
+      </div>
+
+      <div class="press-card">
+        <p class="press-outlet">Pint of Science USA</p>
+        <h4>"The Secret Life of Turbulence" — Public Talk</h4>
+        <p>Selected to present at the 2025 international Pint of Science festival, communicating turbulence research to general audiences in informal, accessible settings. May 2025.</p>
+      </div>
+
+      <div class="press-card">
+        <p class="press-outlet">Stories of Women in Fluids</p>
+        <h4>Contributing Author</h4>
+        <p>Writing anthologies for the SOWIF initiative to inspire and empower women and girls pursuing careers in fluid dynamics through mentorship and personal stories. Books in press, 2024–Present.</p>
+      </div>
+
+      <div class="press-card">
+        <p class="press-outlet">Quora</p>
+        <h4>Top Writer 2018</h4>
+        <p>Recognized for high-quality contributions on PhD life, graduate school admissions, and life as an international student. Answered hundreds of questions from prospective researchers worldwide.</p>
+        <a href="#" target="_blank">View Profile ↗</a>
+      </div>
+
+      <div class="press-card">
+        <p class="press-outlet">USC Viterbi · 3MT Competition</p>
+        <h4>Finalist, Three-Minute Thesis 2023</h4>
+        <p>Selected as a finalist across all USC engineering schools for the Three Minute Thesis competition — presenting five years of PhD research to non-specialist judges in three minutes.</p>
+        <a href="#" target="_blank">Watch Video ↗</a>
+      </div>
+
+      <div class="press-card">
+        <p class="press-outlet">Stanford ME Women</p>
+        <h4>Invited Talk: "Yes-And: Improv-ing in Research"</h4>
+        <p>Invited to speak at Stanford's Mechanical Engineering Women &amp; Gender Minorities Group Annual Seminar Series on adaptability and creativity in research, drawing lessons from improv comedy. Jan 2025.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CV ── -->
+<section id="cv">
+  <div class="section-header">
+    <span class="section-number">05</span>
+    <h2>CV Highlights</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="cv-grid">
+    <div>
+      <div class="cv-section">
+        <p class="cv-section-title">Experience</p>
+        <div class="cv-entry">
+          <p class="cv-entry-title">Postdoctoral Fellow</p>
+          <p class="cv-entry-sub">Center for Turbulence Research, Stanford University</p>
+          <p class="cv-entry-sub">Faculty Sponsor: Prof. Beverley J. McKeon</p>
+          <p class="cv-entry-date">Apr 2024 – Present</p>
+        </div>
+        <div class="cv-entry">
+          <p class="cv-entry-title">Ph.D. Research Assistant</p>
+          <p class="cv-entry-sub">Dept. of Aerospace &amp; Mechanical Engineering, USC</p>
+          <p class="cv-entry-sub">Advisor: Prof. Mitul Luhar</p>
+          <p class="cv-entry-date">Aug 2016 – Dec 2023</p>
+        </div>
+        <div class="cv-entry">
+          <p class="cv-entry-title">Undergraduate Research Intern</p>
+          <p class="cv-entry-sub">Defense R&amp;D Organization (DRDO), India</p>
+          <p class="cv-entry-date">Aug 2015 – May 2016</p>
+        </div>
+        <div class="cv-entry">
+          <p class="cv-entry-title">Visiting Research Scholar</p>
+          <p class="cv-entry-sub">University of Southern California</p>
+          <p class="cv-entry-date">Jun – Aug 2015</p>
+        </div>
+        <div class="cv-entry">
+          <p class="cv-entry-title">Attitude Controls Engineer</p>
+          <p class="cv-entry-sub">ISRO Student Satellite Team (SWAYAM)</p>
+          <p class="cv-entry-date">May 2013 – May 2016</p>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <p class="cv-section-title">Fellowships &amp; Awards</p>
+        <div class="cv-entry">
+          <p class="cv-entry-title">CTR Postdoctoral Fellowship</p>
+          <p class="cv-entry-sub">Stanford University</p>
+          <p class="cv-entry-date">2024</p>
+        </div>
+        <div class="cv-entry">
+          <p class="cv-entry-title">Viterbi Graduate Fellowship (4 years)</p>
+          <p class="cv-entry-sub">University of Southern California</p>
+          <p class="cv-entry-date">2016</p>
+        </div>
+        <div class="cv-entry">
+          <p class="cv-entry-title">S.N. Bose Scholarship</p>
+          <p class="cv-entry-sub">Indo-US Science and Technology Forum · &lt;5% acceptance rate</p>
+          <p class="cv-entry-date">2015</p>
+        </div>
+        <div class="cv-entry">
+          <p class="cv-entry-title">WiSE Travel Grant</p>
+          <p class="cv-entry-sub">USC Women in Science and Engineering</p>
+          <p class="cv-entry-date">2019</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="cv-section">
+        <p class="cv-section-title">Teaching</p>
+        <div class="cv-entry">
+          <p class="cv-entry-title">Guest Lecturer · Stanford University</p>
+          <p class="cv-entry-sub">ME 351A Fluid Mechanics (Nov 2024)</p>
+          <p class="cv-entry-sub">ME 354 Experimental Methods in Fluid Mechanics (May 2024)</p>
+        </div>
+        <div class="cv-entry">
+          <p class="cv-entry-title">Teaching Assistant · USC</p>
+          <p class="cv-entry-sub">Dynamics of Fluids · Heat Transfer · Thermodynamics · Intro to Aerospace</p>
+          <p class="cv-entry-date">2019 – 2023</p>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <p class="cv-section-title">Service</p>
+        <div class="cv-entry">
+          <p class="cv-entry-title">SPACE Advisory Committee</p>
+          <p class="cv-entry-sub">Stanford VPGE — Graduate Student &amp; Postdoc Advisory Committee</p>
+          <p class="cv-entry-date">Sept 2024 – Present</p>
+        </div>
+        <div class="cv-entry">
+          <p class="cv-entry-title">Peer Reviewer</p>
+          <p class="cv-entry-sub">Physical Review Fluids · Scientific Reports · Physics of Fluids</p>
+          <p class="cv-entry-date">2024 – Present</p>
+        </div>
+        <div class="cv-entry">
+          <p class="cv-entry-title">Judge · Stanford MECON Conference</p>
+          <p class="cv-entry-sub">4th Stanford Mechanical Engineering Conference</p>
+          <p class="cv-entry-date">May 2024</p>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <p class="cv-section-title">Technical Skills</p>
+        <div class="cv-entry">
+          <p class="cv-entry-title">Experimental</p>
+          <p class="cv-entry-sub">IR Thermography · Cold-wire Anemometry · PIV · DAQ Systems · Wind Tunnel · Thermocouples · Pressure &amp; Flow Sensors · High-speed Imaging</p>
+        </div>
+        <div class="cv-entry">
+          <p class="cv-entry-title">Computational</p>
+          <p class="cv-entry-sub">OpenFOAM · ANSYS Fluent · MATLAB · Python · PyTorch · SolidWorks · OpenSCAD</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cv-download">
+    <p>Download the full versions of my CV and industry resume below.</p>
+    <div style="display: flex; gap: 12px; justify-content: center;">
+      <a href="Shilpa_Vijay_CV_2026.pdf" download class="btn btn-primary">Download Academic CV</a>
+      <a href="Shilpa_Vijay_Industry_Resume_thermal.pdf" download class="btn btn-outline">Download Industry Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── MISC ── -->
+<section id="misc" style="background: var(--cream); max-width: 100%; padding: var(--section-gap) 0;">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 60px;">
+    <div class="section-header">
+      <span class="section-number">06</span>
+      <h2>Misc</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="misc-grid">
+      <div class="misc-card">
+        <h3>Outreach</h3>
+        <ul>
+          <li>Session Facilitator, CTR² Summer Program — vortex cannon workshop for underrepresented undergrads (2025)</li>
+          <li>Pint of Science USA speaker — "The Secret Life of Turbulence" (2025)</li>
+          <li>CTR Tea Seminar speaker on porous interface flows (2024)</li>
+          <li>WiSE Liaison, USC — organized alumni fireside chats and imposter syndrome seminars (2022–23)</li>
+          <li>STEM Spotlight Open House — 3D printing demo for 100+ high school students (2017)</li>
+        </ul>
+      </div>
+      <div class="misc-card">
+        <h3>Mentoring</h3>
+        <ul>
+          <li>M.S. students: Adrian Loekman (Stanford, 2024–25), Bowei Wu, Upasana Goddumari, Taylor McLaughlin, Yixuan Song (USC)</li>
+          <li>Undergraduate students: Dayna Jackson (Stanford), Gerald Flores, Bryce Heitner, Stara Shinsato + more (USC)</li>
+          <li>High school students: Arjun Sathish (Stanford), Sonal Sukhatme, Madeleine Yee + more (USC, 2018–23)</li>
+        </ul>
+      </div>
+      <div class="misc-card">
+        <h3>Beyond the Lab</h3>
+        <ul>
+          <li>Co-Director, Vidushak Improv Comedy Group at USC — led 15-member team, weekly practice, annual scripted performance (2019–2022)</li>
+          <li>Top Quora Writer 2018 — PhD life, grad school admissions, international student experience</li>
+          <li>First National Security &amp; Naval Power Bootcamp, George Washington University (2024)</li>
+          <li>NASA TFAWS participant — thermal modeling and CFD validation (2025)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-header" style="margin-bottom: 20px;">
+        <span class="section-number" style="color: var(--accent-light);">07</span>
+        <h2>Contact</h2>
+      </div>
+      <p>I'm always happy to connect — whether it's about research collaborations, speaking invitations, or mentorship opportunities.</p>
+      <div class="contact-links">
+        <a href="mailto:shilpavi@stanford.edu" class="contact-link">
+          <span class="contact-link-icon">✉</span>
+          <div class="contact-link-text">
+            <p class="contact-link-label">Email</p>
+            <p class="contact-link-value">shilpavi@stanford.edu</p>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/shilpa-vijay" target="_blank" class="contact-link">
+          <span class="contact-link-icon">in</span>
+          <div class="contact-link-text">
+            <p class="contact-link-label">LinkedIn</p>
+            <p class="contact-link-value">linkedin.com/in/shilpa-vijay</p>
+          </div>
+        </a>
+        <a href="https://scholar.google.com" target="_blank" class="contact-link">
+          <span class="contact-link-icon">𝐺</span>
+          <div class="contact-link-text">
+            <p class="contact-link-label">Google Scholar</p>
+            <p class="contact-link-value">Shilpa Vijay</p>
+          </div>
+        </a>
+        <a href="https://ctr.stanford.edu" target="_blank" class="contact-link">
+          <span class="contact-link-icon">🏛</span>
+          <div class="contact-link-text">
+            <p class="contact-link-label">Lab</p>
+            <p class="contact-link-value">Center for Turbulence Research, Stanford</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-note">
+      <h4>Currently based at Stanford University</h4>
+      <p>
+        My research is conducted at the Center for Turbulence Research wind tunnel facilities.
+        I'm interested in collaborations on rough-wall heat transfer, experimental diagnostics,
+        and porous surface design for thermofluid applications.
+        <br><br>
+        I'm also happy to connect with students interested in pursuing research in experimental
+        fluid mechanics — feel free to reach out.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Shilpa Vijay · Center for Turbulence Research · Stanford University
+</footer>
+
+</body>
+</html>
