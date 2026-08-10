@@ -31,4 +31,4 @@ My research sits at the intersection of fluid mechanics, thermal engineering, an
 
 Before Stanford, I earned my **Ph.D. from USC** (advisor: [Prof. Mitul Luhar](https://viterbi.usc.edu/directory/faculty/Luhar/Mitul)). I also hold a B.Tech. in Civil Engineering from College of Engineering Pune, India.
 
-**Research Interests:** Wall-bounded turbulence and boundary layer dynamics, turbulent flow over rough and complex surfaces, convective heat and mass transfer, wind tunnel experimentation, non-intrusive optical diagnostics (PIV, IR thermography, cold-wire anemometry), large-scale data analysis, data-driven modeling.
+**Research Interests:** Wall-bounded turbulence and boundary layer dynamics, turbulent flow over rough and complex surfaces, convective heat and mass transfer, wind tunnel experimentation, non-intrusive optical diagnostics (PIV, IR thermography, cold-wire anemometry), metamaterials for passive flow control, large-scale data analysis, data-driven modeling.
