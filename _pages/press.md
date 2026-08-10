@@ -4,7 +4,7 @@ title: press
 permalink: /press/
 description: Press features, outreach, and public engagement.
 nav: true
-nav_order: 6
+nav_order: 8
 ---
 
 ## Press & Features
