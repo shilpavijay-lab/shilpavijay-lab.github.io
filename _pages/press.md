@@ -18,7 +18,7 @@ nav_order: 8
   </div>
 </div>
 <div class="caption">
-  Stanford Dryden Wind Tunnel — IR thermography and PIV setup for rough-wall heat transfer experiments.
+  USC Dryden Wind Tunnel / Fabulous Fluids Facility.
 </div>
 
 <div class="row mt-3">
