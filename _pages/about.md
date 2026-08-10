@@ -29,6 +29,6 @@ I am a **Postdoctoral Fellow** at Stanford's Center for Turbulence Research (CTR
 
 My research sits at the intersection of fluid mechanics, thermal engineering, and surface design. I build custom experimental systems — modular heated-wall test sections, cold-wire anemometry rigs, and IR thermography setups — to capture the physics that simulations miss.
 
-Before Stanford, I earned my **Ph.D. from USC** (advisor: [Prof. Mitul Luhar](https://viterbi.usc.edu/directory/faculty/Luhar/Mitul)), where I demonstrated 200--400% enhancement in convective heat transfer through engineered porous surface architectures. I also hold a B.Tech. in Civil Engineering from College of Engineering Pune, India.
+Before Stanford, I earned my **Ph.D. from USC** (advisor: [Prof. Mitul Luhar](https://viterbi.usc.edu/directory/faculty/Luhar/Mitul)). I also hold a B.Tech. in Civil Engineering from College of Engineering Pune, India.
 
 **Research Interests:** Wall-bounded turbulence and boundary layer dynamics, turbulent flow over rough and complex surfaces, convective heat and mass transfer, wind tunnel experimentation, non-intrusive optical diagnostics (PIV, IR thermography, cold-wire anemometry), large-scale data analysis, data-driven modeling.
