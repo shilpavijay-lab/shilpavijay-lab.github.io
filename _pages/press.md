@@ -7,34 +7,6 @@ nav: true
 nav_order: 8
 ---
 
-## In the Lab
-
-<div class="row mt-3">
-  <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/windtunnel_portrait.jpg" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/windtunnel_piv.jpg" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-<div class="caption">
-  USC Dryden Wind Tunnel / Fabulous Fluids Facility.
-</div>
-
-<div class="row mt-3">
-  <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/davinci_lab.jpg" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-6 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/davinci_group.jpg" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-<div class="caption">
-  <a href="https://www.davinci-camp.com/" target="_blank">DaVinci Camp</a> outreach — hosting middle school students at the wind tunnel lab. Summers 2025 & 2026.
-</div>
-
----
-
 ## Conferences & Talks
 
 <div class="row mt-3">
@@ -91,9 +63,37 @@ nav_order: 8
 
 <div class="row mt-3">
   <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/davinci_lab.jpg" class="img-fluid rounded z-depth-1" %}
+  </div>
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/davinci_group.jpg" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption">
+  <a href="https://www.davinci-camp.com/" target="_blank">DaVinci Camp</a> outreach — hosting middle school students at the wind tunnel lab. Summers 2025 & 2026.
+</div>
+
+<div class="row mt-3">
+  <div class="col-sm-6 mt-3 mt-md-0">
     {% include figure.liquid path="assets/img/SOWIF_Shilpa.jpeg" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 <div class="caption">
   Contributing Author, <a href="https://www.storiesofwomeninfluids.org/" target="_blank">Stories of Women in Fluids</a> — anthologies to inspire women and girls in fluid dynamics. <a href="https://www.storiesofwomeninfluids.org/books" target="_blank">Purchase books.</a>
+</div>
+
+---
+
+## In the Lab
+
+<div class="row mt-3">
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/windtunnel_portrait.jpg" class="img-fluid rounded z-depth-1" %}
+  </div>
+  <div class="col-sm-6 mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/windtunnel_piv.jpg" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption">
+  USC Dryden Wind Tunnel / Fabulous Fluids Facility.
 </div>
